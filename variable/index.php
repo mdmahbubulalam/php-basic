@@ -118,3 +118,35 @@ define("TEST2", "Hello Sylhet");
 echo TEST1;
 echo "<br/>";
 echo TEST2;
+
+$j = 3;
+$k = 4;
+function testGlobal1() {
+    global $j, $k;
+    echo "<br/>";
+    echo $j+$k;
+}
+testGlobal1();
+
+function testGlobal2() {
+    echo "<br/>";
+    echo $GLOBALS['j'] + $GLOBALS['k'];
+}
+testGlobal2();
+
+function testGlobal3() {
+    global $l;
+    $l = 10 + 53;
+}
+
+testGlobal3();
+echo "<br/>";
+echo $l;
+
+function testGlobal4() {
+    $GLOBALS ['l'] = 10+20;
+}
+
+testGlobal4();
+echo "<br/>";
+echo $l;
